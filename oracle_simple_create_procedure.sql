@@ -38,7 +38,7 @@ BEGIN
       IF (v_status = 'I') THEN
         v_id_retorno := 4;
         v_retorno    := 'Pessoa está inativa.';
-      ELSIF (trunc(months_between(sysdate,v_dt_nascimento)/12) <= 18) THEN
+      ELSIF (trunc(months_between(sysdate,v_dt_nascimento)/12) < 18) THEN
         v_id_retorno := 5;
         v_retorno    := 'Pessoa é de menor idade.';
       ELSE
